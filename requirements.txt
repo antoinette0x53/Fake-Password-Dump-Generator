@@ -1,0 +1,2 @@
+fake-factory==9999.9.9
+Faker==2.0.3
