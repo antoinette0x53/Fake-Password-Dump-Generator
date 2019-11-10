@@ -27,10 +27,7 @@ while(flag):
     password = faker.password()
     ip = faker.ipv4()
     email = faker.email()
-    if args.zip:
-        f.write('%s, %s, %s\n' % (email, password, ip))
-    else:
-        f.write('%s, %s, %s\n' % (email, password, ip))
+    f.write('%s, %s, %s\n' % (email, password, ip))
     f.flush()
 
     log_lines = log_lines - 1
