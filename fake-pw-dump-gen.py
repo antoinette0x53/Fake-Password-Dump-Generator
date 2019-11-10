@@ -2,7 +2,17 @@
 import time
 import gzip
 import argparse
+import numpy
+import random
 from faker import Faker
+
+def gen_pw(pass_type):
+    password = ''
+    if pass_type == 'weak':
+        password = random.choice(lines).decode('utf-8').rstrip()
+    if pass_type ==  'strong':
+        password = faker.password()
+    return password
 
 parser = argparse.ArgumentParser(__file__, description="Fake Password Dump Generator")
 parser.add_argument("--output", "-o", dest="output",help="Specify where to output dump file",type=str)
@@ -22,9 +32,16 @@ else:
 
 faker = Faker()
 
+password_type = ["weak","strong"]
+try:
+    with open('rockyou100.txt', 'rb') as ry:
+        lines = ry.readlines()
+except Exception as e:
+    print(str(e))
+
 flag = True
 while(flag):
-    password = faker.password()
+    password = gen_pw(numpy.random.choice(password_type,p=[0.7,0.3]))
     ip = faker.ipv4()
     email = faker.email()
     f.write('%s, %s, %s\n' % (email, password, ip))
