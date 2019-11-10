@@ -5,9 +5,11 @@ Based on the [Fake-Apache-Log-Generate from kiritbasu](https://github.com/kiritb
 ## Usage
 
 Generate 100 lines in the dump and output to temp.
+
 `$ python3 fake-pw-dump-gen.py -n 100 -o /tmp/`
 
 Output Filename format
+
 `password_dump_TIMESTAMP.dump`
 
 
