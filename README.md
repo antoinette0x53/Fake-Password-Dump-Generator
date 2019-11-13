@@ -17,8 +17,9 @@ Help Output
 
 ```
 $ python3 fake-pw-dump-gen.py --help
+
 usage: fake-pw-dump-gen.py [-h] [--output OUTPUT] [--num NUM_LINES]
-                           [--zip ZIP]
+                           [--zip [ZIP]] [--weak-pw-perc WEAK_PW_PERC]
 
 Fake Password Dump Generator
 
@@ -28,8 +29,11 @@ optional arguments:
                         Specify where to output dump file
   --num NUM_LINES, -n NUM_LINES
                         The number of lines in dump
-  --zip ZIP, -z ZIP     gzip the dump file
-
+  --zip [ZIP], -z [ZIP]
+                        gzip the dump file
+  --weak-pw-perc WEAK_PW_PERC, -w WEAK_PW_PERC
+                        Specify the percentage of weak passwords to use.
+                        Default is 0.3. Must be <= 1.0
 ```
 
 ## Requirements
