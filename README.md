@@ -12,6 +12,13 @@ Output Filename format
 
 `password_dump_TIMESTAMP.dump`
 
+Password Dump Line Format
+
+`email={$EMAIL}:password={$PASSWORD}:ip={$IP}`
+
+If you'd like to use a different format, edit the following line in `fake-pw-dump-gen.py`:
+
+`f.write('email=%s:password=%s:ip=%s\n' % (email, password, ip))`
 
 Help Output
 
@@ -44,3 +51,5 @@ optional arguments:
 ## License
 This script is released under the Apache version 2 license.
 
+## Notes
+- The rockyou.txt file is a subset of the rockyou password dump and is used for the source of the 'weak' passwords. I noticed that the Faker `password()` function only generated strong passwords which would be unusual to see in a password dump. Adding in weak passwords from rockyou helped to make the password dump look a bit more realistic with the addition of duplicated and uncomplicated passwords.
